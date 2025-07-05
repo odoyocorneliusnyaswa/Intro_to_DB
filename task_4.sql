@@ -1,13 +1,12 @@
--- Script to show the structure of the books table
 SELECT 
     COLUMN_NAME, 
     COLUMN_TYPE, 
     IS_NULLABLE, 
     COLUMN_KEY, 
     COLUMN_DEFAULT, 
-    EXTRA 
+    EXTRA
 FROM 
-    INFORMATION_SCHEMA.COLUMNS 
+    INFORMATION_SCHEMA.COLUMNS
 WHERE 
-    TABLE_SCHEMA = 'alx_book_store' 
-    AND TABLE_NAME = 'books';
+    TABLE_NAME = 'books' 
+    AND TABLE_SCHEMA = DATABASE();
