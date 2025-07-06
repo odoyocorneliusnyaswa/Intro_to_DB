@@ -1,4 +1,4 @@
--- Script to show full table description without using DESCRIBE or EXPLAIN
+-- Script to display books table structure without DESCRIBE/EXPLAIN
 SELECT 
     COLUMN_NAME AS 'Field',
     COLUMN_TYPE AS 'Type',
@@ -7,7 +7,7 @@ SELECT
     COLUMN_DEFAULT AS 'Default',
     EXTRA AS 'Extra'
 FROM 
-    INFORMATION_SCHEMA.COLUMNS
+    INFORMATION_SCHEMA.COLUMNS 
 WHERE 
-    TABLE_SCHEMA = 'alx_book_store' 
+    TABLE_SCHEMA = DATABASE() 
     AND TABLE_NAME = 'books';
