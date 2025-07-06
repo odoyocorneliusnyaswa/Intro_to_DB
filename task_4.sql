@@ -1,13 +1,13 @@
-USE alx_book_store;
-
+-- Script to show full table description without using DESCRIBE or EXPLAIN
 SELECT 
-    COLUMN_NAME AS 'Column Name', 
-    DATA_TYPE AS 'Data Type', 
-    IS_NULLABLE AS 'Is Nullable', 
-    COLUMN_DEFAULT AS 'Default Value', 
-    CHARACTER_MAXIMUM_LENGTH AS 'Max Length'
+    COLUMN_NAME AS 'Field',
+    COLUMN_TYPE AS 'Type',
+    IS_NULLABLE AS 'Null',
+    COLUMN_KEY AS 'Key',
+    COLUMN_DEFAULT AS 'Default',
+    EXTRA AS 'Extra'
 FROM 
     INFORMATION_SCHEMA.COLUMNS
 WHERE 
-    TABLE_NAME = 'books' 
-    AND TABLE_SCHEMA = 'alx_book_store';
+    TABLE_SCHEMA = 'alx_book_store' 
+    AND TABLE_NAME = 'books';
